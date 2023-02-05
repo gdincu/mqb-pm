@@ -1444,7 +1444,9 @@ public class DashboardFragment extends CarFragment {
                 label.setBackground(getContext().getDrawable(R.drawable.ic_heading));
                 break;
             case "coolantTemperature":
-            case "torque-enginecoolanttemp_0x05":
+            //case "torque-enginecoolanttemp_0x05":
+            case "torque-enginecoolanttemp_0x-22DFAA":
+
                 label.setText("");
                 value.setText(FORMAT_TEMPERATURE0);
                 label.setBackground(getContext().getDrawable(R.drawable.ic_water));
@@ -1838,7 +1840,8 @@ public class DashboardFragment extends CarFragment {
                 setupClock(icon, "ic_oil", "", clock, true, "°", 0, 200, "float", "integer");
                 break;
             case "exlap-coolantTemperature":
-            case "torque-enginecoolanttemp_0x05":
+                //case "torque-enginecoolanttemp_0x05":
+            case "torque-enginecoolanttemp_0x-22DFAA":
                 setupClock(icon, "ic_water", "", clock, true, "°", 0, 200, "float", "integer");
                 break;
             case "exlap-outsideTemperature":
@@ -2249,7 +2252,8 @@ public class DashboardFragment extends CarFragment {
                     case "torque-oiltemperature_0x5c":
                     case "torque-catalysttemperature_0x3c":
                     case "torque-chargeaircoolertemperature_0x77":
-                    case "torque-enginecoolanttemp_0x05":
+                        //case "torque-enginecoolanttemp_0x05":
+                    case "torque-enginecoolanttemp_0x-22DFAA":
                     case "torque-exhaustgastempbank1sensor1_0x78":
                     case "torque-exhaustgastempbank1sensor2_0xff1282":
                     case "torque-exhaustgastempbank1sensor3_0xff1283":
@@ -2616,7 +2620,8 @@ public class DashboardFragment extends CarFragment {
                 case "torque-catalysttemperature_0x3c":
                 case "torque-chargeaircoolertemperature_0x77":
                 case "torque-commandedequivalenceratiolambda_0x44":
-                case "torque-enginecoolanttemp_0x05":
+                    //case "torque-enginecoolanttemp_0x05":
+                case "torque-enginecoolanttemp_0x-22DFAA":
                 case "torque-engineloadabsolute_0x43":
                 case "torque-fuellevel_0x2f":
                 case "torque-intakemanifoldpressure_0x0b":
