@@ -2262,7 +2262,6 @@ public class DashboardFragment extends CarFragment {
                     case "torque-catalysttemperature_0x3c":
                     case "torque-chargeaircoolertemperature_0x77":
                         //case "torque-enginecoolanttemp_0x05":
-                    case "torque-enginecoolanttemp_0x-22DFAA":
                     case "torque-exhaustgastempbank1sensor1_0x78":
                     case "torque-exhaustgastempbank1sensor2_0xff1282":
                     case "torque-exhaustgastempbank1sensor3_0xff1283":
@@ -2274,6 +2273,10 @@ public class DashboardFragment extends CarFragment {
                             clockValue = clockValue * 1.8f;
                             clockValue = clockValue + 32;
                         }
+                        clock.setUnit(unitText);
+                        break;
+                    case "torque-enginecoolanttemp_0x-22DFAA":
+                        unitText = "°C";
                         clock.setUnit(unitText);
                         break;
                 }

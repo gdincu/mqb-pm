@@ -461,6 +461,7 @@
         <item>vehicleIdenticationNumber.VIN</item>
         <!-- PIDs from Torque -->
         <!-- Use PIDs like this: torque_<description>_<pid> -->
+        <item>torque-fuelflow_0xFF125D</item>
         <item>torque-rpm_0x0c</item>
         <item>torque-speed_0x0d</item>
         <item>torque-fuelpressure_0x0a</item>
