@@ -1570,7 +1570,7 @@ public class DashboardFragment extends CarFragment {
                 label.setBackground(getContext().getDrawable(R.drawable.ic_tyre));
                 break;
             case "tankLevelPrimary":
-            case "torque-fuellevel_0x2f":
+            case "torque-fuellevel_0x-22AFAB":
                 //label.setText("1");
                 label.setBackground(getContext().getDrawable(R.drawable.ic_fuel));
                 break;
@@ -1900,8 +1900,8 @@ public class DashboardFragment extends CarFragment {
                 setupClock(icon, "ic_fuelsecondary", "", clock, false, "l/100km", 0, 100, "float", "integer");
                 break;
             case "exlap-tankLevelPrimary":
-            case "torque-fuellevel_0x2f":
-                setupClock(icon, "ic_fuelprimary", "", clock, false, "l", 0, 100, "float", "integer");
+            case "torque-fuellevel_0x-22AFAB":
+                setupClock(icon, "ic_fuelprimary", "", clock, false, "l", 0, 47, "float", "integer");
                 break;
             case "exlap-tankLevelSecondary":
                 setupClock(icon, "ic_fuelsecondary", "", clock, false, "%", 0, 100, "float", "integer");
@@ -2234,7 +2234,7 @@ public class DashboardFragment extends CarFragment {
                     case "torque-commandedequivalenceratiolambda_0x44":
                     case "torque-o2sensor1equivalenceratio_0x34":
                     case "torque-engineloadabsolute_0x43":
-                    case "torque-fuellevel_0x2f":
+                    case "torque-fuellevel_0x-22AFAB":
                     case "torque-fuelrailpressure_0x23":
                         clock.setUnit(unitText); // use the units Torque is providing
                         break;
@@ -2623,7 +2623,7 @@ public class DashboardFragment extends CarFragment {
                     //case "torque-enginecoolanttemp_0x05":
                 case "torque-enginecoolanttemp_0x-22DFAA":
                 case "torque-engineloadabsolute_0x43":
-                case "torque-fuellevel_0x2f":
+                case "torque-fuellevel_0x-22AFAB":
                 case "torque-intakemanifoldpressure_0x0b":
                 case "torque-o2sensor1equivalenceratio_0x34":
                 case "torque-obdadaptervoltage_0xff1238":

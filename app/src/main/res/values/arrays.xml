@@ -199,7 +199,7 @@
         <item>torque-phonebatterylevel_0xff129a</item>
         <item>torque-phonebarometer_0xff1270</item>
         <item>torque-obdadaptervoltage_0xff1238</item>
-        <item>torque-fuellevel_0x2f</item>
+        <item>torque-fuellevel_0x-22AFAB</item>
 
         <item>torque-voltagemodule_0x42</item>
         <item>torque-oiltemperature_0x5c</item>
@@ -489,7 +489,7 @@
         <!-- <item>torque-enginecoolanttemp_0x05</item> -->
         <item>torque-enginecoolanttemp_0x-22DFAA</item>
         <item>torque-engineloadabsolute_0x43</item>
-        <item>torque-fuellevel_0x2f</item>
+        <item>torque-fuellevel_0x-22AFAB</item>
         <item>torque-intakemanifoldpressure_0x0b</item>
         <item>torque-o2sensor1equivalenceratio_0x34</item>
         <item>torque-obdadaptervoltage_0xff1238</item>
