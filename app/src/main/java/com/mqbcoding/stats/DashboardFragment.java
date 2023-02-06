@@ -150,7 +150,7 @@ public class DashboardFragment extends CarFragment {
     private String sourceLocation;
     private String selectedFont;
     private boolean selectedPressureUnits;
-    private int updateSpeed = 2000;
+    private int updateSpeed = 300;
 
     private float[] MaxspeedLeft;
     private float[] MaxspeedCenter;
@@ -557,9 +557,9 @@ public class DashboardFragment extends CarFragment {
         accurateOn = sharedPreferences.getBoolean("accurateActive", false);  //true = be accurate. false = have 2000ms of animation time
         proximityOn = sharedPreferences.getBoolean("proximityActive", false);  //true = be accurate. false = have 2000ms of animation time
         if (accurateOn) {
-            updateSpeed = 1;
+            updateSpeed = 100;
         } else {
-            updateSpeed = 2000;
+            updateSpeed = 300;
         }
 
         if (!proximityOn) {
@@ -1457,7 +1457,8 @@ public class DashboardFragment extends CarFragment {
                 label.setBackground(getContext().getDrawable(R.drawable.ic_water));
                 break;
             case "oilTemperature":
-            case "torque-oiltemperature_0x5c":
+            //case "torque-oiltemperature_0x5c":
+            case "elantra-oiltemperature_0x-22DFAA":
                 value.setText(FORMAT_TEMPERATURE0);
                 label.setBackground(getContext().getDrawable(R.drawable.ic_oil));
                 break;
@@ -1844,7 +1845,8 @@ public class DashboardFragment extends CarFragment {
                 setupClock(icon, "ic_battery", "", clock, false, getString(R.string.unit_volt), 0, 17, "float", "integer");
                 break;
             case "exlap-oilTemperature":
-            case "torque-oiltemperature_0x5c":
+                //case "torque-oiltemperature_0x5c":
+            case "elantra-oiltemperature_0x-22DFAA":
                 setupClock(icon, "ic_oil", "", clock, true, "°", 0, 200, "float", "integer");
                 break;
             case "exlap-coolantTemperature":
@@ -2086,6 +2088,20 @@ public class DashboardFragment extends CarFragment {
                         Log.e(TAG, "Error: " + e.getMessage());
                     }
                     break;
+                case "elantra":
+                    query = query.substring(query.lastIndexOf('_') + 1);
+                    query = query.substring(2);
+                    long[] queryPids = new long[1];
+                    queryPids[0] =  new BigInteger(query, 16).longValue();
+                    try {
+                        if (torqueService != null) {
+                            clockValue = torqueService.getValueForPids(queryPids)[2];
+                            unitText = torqueService.getUnitForPid(queryPids[2]);
+                        }
+                    } catch (Exception e) {
+                        Log.e(TAG, "Error: " + e.getMessage());
+                    }
+                    break;
                 case "exlap":
                     query = query.substring(query.lastIndexOf('-') + 1);
                     clockValue = (Float) mLastMeasurements.get(query);
@@ -2258,7 +2274,7 @@ public class DashboardFragment extends CarFragment {
                     case "torque-intake_air_temperature_0x0f":
                     case "torque-transmissiontemp_0x0105":
                     case "torque-transmissiontemp_0xfe1805":
-                    case "torque-oiltemperature_0x5c":
+                    //case "torque-oiltemperature_0x5c":
                     case "torque-catalysttemperature_0x3c":
                     case "torque-chargeaircoolertemperature_0x77":
                         //case "torque-enginecoolanttemp_0x05":
@@ -2276,6 +2292,7 @@ public class DashboardFragment extends CarFragment {
                         clock.setUnit(unitText);
                         break;
                     case "torque-enginecoolanttemp_0x-22DFAA":
+                    case "elantra-oiltemperature_0x-22DFAA":
                         unitText = "°C";
                         clock.setUnit(unitText);
                         break;
@@ -2640,7 +2657,6 @@ public class DashboardFragment extends CarFragment {
                 case "torque-intakemanifoldpressure_0x0b":
                 case "torque-o2sensor1equivalenceratio_0x34":
                 case "torque-obdadaptervoltage_0xff1238":
-                case "torque-oiltemperature_0x5c":
                 case "torque-phonebarometer_0xff1270":
                 case "torque-phonebatterylevel_0xff129a":
                 case "torque-pressurecontrol_0x70":
@@ -2659,6 +2675,22 @@ public class DashboardFragment extends CarFragment {
                         if (torqueService != null) {
                             torqueData = torqueService.getValueForPid(queryPid, true);
                             String unitText = torqueService.getUnitForPid(queryPid);
+                            value.setText(String.format(Locale.US, FORMAT_DECIMALS_WITH_UNIT, torqueData, unitText));
+                        }
+                    } catch (Exception e) {
+                        Log.e(TAG, "Error: " + e.getMessage());
+                    }
+                    break;
+                case "elantra-oiltemperature_0x-22DFAA":
+                    queryElement = queryElement.substring(queryElement.lastIndexOf('_') + 1);
+                    queryElement = queryElement.substring(2);
+                    long[] queryPids = new long[1];
+                    queryPids[0]= new BigInteger(queryElement, 16).longValue();
+
+                    try {
+                        if (torqueService != null) {
+                            torqueData = torqueService.getValueForPids(queryPids)[2];
+                            String unitText = torqueService.getUnitForPid(queryPids[2]);
                             value.setText(String.format(Locale.US, FORMAT_DECIMALS_WITH_UNIT, torqueData, unitText));
                         }
                     } catch (Exception e) {
