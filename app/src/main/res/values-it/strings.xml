@@ -137,6 +137,7 @@
     <string name="unit_nm">Nm</string>
     <string name="unit_psi">psi</string>
     <string name="unit_rpm">RPM</string>
+    <string name="unit_fuelflow">L/hr</string>
     <string name="unit_volt">V</string>
     <string name="activity_main_title">Performance Monitor</string>
     <string name="activity_readings_title">Dati grezzi</string>

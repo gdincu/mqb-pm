@@ -1,6 +1,7 @@
 <resources>
 
     <string name="unit_psi">psi</string>
+    <string name="unit_fuelflow">L/hr</string>
     <string name="unit_bar">bar</string>
     <string name="unit_kmh">km/h</string>
     <string name="unit_rpm">RPM</string>

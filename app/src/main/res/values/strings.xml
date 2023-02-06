@@ -160,6 +160,7 @@
     <string name="unit_nm">Nm</string>
     <string name="unit_psi">psi</string>
     <string name="unit_rpm">RPM</string>
+    <string name="unit_fuelflow">L/hr</string>
     <string name="unit_rpm1000">×1000</string>
     <string name="unit_volt">V</string>
     <string name="unit_fahrenheit">Fahrenheit</string>
@@ -191,6 +192,7 @@
     <string name="label_tyreFR">FR</string>
     <string name="label_tyreFL">FL</string>
     <string name="element_torque_rpm">RPM</string>
+    <string name="element_torque_fuelflow">Fuel flow</string>
     <string name="element_torque_speed">Speed</string>
     <string name="element_torque_fuelpressure">Fuel pressure</string>
     <string name="element_torque_engineload">Engine load</string>

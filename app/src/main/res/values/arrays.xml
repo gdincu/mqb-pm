@@ -89,6 +89,7 @@
         <item>@string/element_tyreTemperatureFL</item>
 
         <!-- PIDs from Torque -->
+        <item>@string/element_torque_fuelflow</item>
         <item>@string/element_torque_rpm</item>
         <item>@string/element_torque_speed</item>
         <item>@string/element_torque_fuelpressure</item>
@@ -176,6 +177,7 @@
         <item>exlap-tyreTemperatures.temperatureFrontRight</item>
         <item>exlap-tyreTemperatures.temperatureFrontLeft</item>
 
+        <item>torque-fuelflow_0xFF125D</item>
         <item>torque-rpm_0x0c</item>
         <item>torque-speed_0x0d</item>
         <item>torque-fuelpressure_0x0a</item>
@@ -303,6 +305,7 @@
         <item>@drawable/ic_torque</item>
         <item>@drawable/ic_torque</item>
         <item>@drawable/ic_torque</item>
+        <item>@drawable/ic_torque</item>
         <item>@drawable/ic_none</item>
     </string-array>
 
@@ -355,6 +358,7 @@
         <item>@string/element_VIN</item>
 
         <!-- PIDs from Torque -->
+        <item>@string/element_torque_fuelflow</item>
         <item>@string/element_torque_rpm</item>
         <item>@string/element_torque_speed</item>
         <item>@string/element_torque_fuelpressure</item>
@@ -550,6 +554,7 @@
         <item>@drawable/ic_exlap</item>
         <item>@drawable/ic_exlap</item>
         <item>@drawable/ic_exlap</item>
+        <item>@drawable/ic_torque</item>
         <item>@drawable/ic_torque</item>
         <item>@drawable/ic_torque</item>
         <item>@drawable/ic_torque</item>

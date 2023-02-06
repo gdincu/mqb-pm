@@ -100,6 +100,7 @@
     <string name="unit_psi">psi</string>
     <string name="unit_rpm">RPM</string>
     <string name="unit_volt">V</string>
+    <string name="unit_fuelflow">L/hr</string>
 
     <string name="element_shortTermConsumptionPrimary">Consumo inmediato (combustible primario)</string>
     <string name="element_shortTermConsumptionSecondary">Consumo inmediato (combustible secundario)</string>

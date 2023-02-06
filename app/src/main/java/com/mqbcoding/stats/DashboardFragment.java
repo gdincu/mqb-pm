@@ -144,6 +144,7 @@ public class DashboardFragment extends CarFragment {
     private static final String FORMAT_TEMPERATUREF = "%.1f°F";
     private static final String FORMAT_VOLT = "%.1fV";
     private static final String FORMAT_VOLT0 = "-,-V";
+    private static final String FORMAT_FUELRATE = "%.1f L/hr";
     private boolean celsiusTempUnit;
     private boolean showStreetName, useGoogleGeocoding, forceGoogleGeocoding;
     private String sourceLocation;
@@ -1432,6 +1433,10 @@ public class DashboardFragment extends CarFragment {
             case "test":
                 label.setBackground(getContext().getDrawable(R.drawable.ic_measurement));
                 break;
+            case "torque-fuelflow_0xFF125D":
+                value.setText(FORMAT_FUELRATE);
+                label.setBackground(getContext().getDrawable(R.drawable.ic_fuel));
+                break;
             case "batteryVoltage":
             case "torque-voltage_0xff1238":
                 value.setText(FORMAT_VOLT0);
@@ -1830,6 +1835,9 @@ public class DashboardFragment extends CarFragment {
                 clock.setTicks();
                 clock.setTickTextFormat(0);
                 break;
+            case "torque-fuelflow_0xFF125D":
+                setupClock(icon, "ic_fuel", "", clock, false, getString(R.string.unit_fuelflow), 0, 50, "float", "integer");
+                break;
             case "torque-voltage_0xff1238":
             case "exlap-batteryVoltage":
             case "torque-voltagemodule_0x42":
@@ -2221,6 +2229,7 @@ public class DashboardFragment extends CarFragment {
                     case "torque-accelerometer_total_0xff1223":
                     case "torque-phonebatterylevel_0xff129a":
                     case "torque-phonebarometer_0xff1270":
+                    case "torque-fuelflow_0xFF125D":
                     case "torque-obdadaptervoltage_0xff1238":
                     case "torque-hybridbattlevel_0x5b":
                     case "torque-voltage_0xff1238":
@@ -2602,6 +2611,7 @@ public class DashboardFragment extends CarFragment {
                 case "torque-intake_air_temperature_0x0f":
                 case "torque-mass_air_flow_0x10":
                 case "torque-throttle_position_0x11":
+                case "torque-fuelflow_0xFF125D":
                 case "torque-voltage_0xff1238":
                 case "torque-AFR_0xff1249":
                 case "torque-AFRc_0xff124d":
