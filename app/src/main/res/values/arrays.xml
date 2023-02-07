@@ -205,7 +205,8 @@
 
         <item>torque-voltagemodule_0x42</item>
         <!-- <item>torque-oiltemperature_0x5c</item> -->
-        <item>elantra-oiltemperature_0x-22DFAA</item>
+        <!-- <item>elantra-oiltemperature_0x-22DFAA</item> -->
+        <item>torque-oiltemperature_0x22e001</item>
         <item>torque-transmissiontemp_0x0105</item>
         <item>torque-transmissiontemp_0xfe1805</item>
         <item>torque-pressurecontrol_0x70</item>
@@ -500,7 +501,8 @@
         <item>torque-o2sensor1equivalenceratio_0x34</item>
         <item>torque-obdadaptervoltage_0xff1238</item>
         <!-- <item>torque-oiltemperature_0x5c</item> -->
-        <item>elantra-oiltemperature_0x-22DFAA</item>
+        <!-- <item>elantra-oiltemperature_0x-22DFAA</item> -->
+        <item>torque-oiltemperature_0x22e001</item>
         <item>torque-phonebarometer_0xff1270</item>
         <item>torque-phonebatterylevel_0xff129a</item>
         <item>torque-pressurecontrol_0x70</item>

@@ -1458,7 +1458,8 @@ public class DashboardFragment extends CarFragment {
                 break;
             case "oilTemperature":
             //case "torque-oiltemperature_0x5c":
-            case "elantra-oiltemperature_0x-22DFAA":
+            //case "elantra-oiltemperature_0x-22DFAA":
+            case "torque-oiltemperature_0x22e001":
                 value.setText(FORMAT_TEMPERATURE0);
                 label.setBackground(getContext().getDrawable(R.drawable.ic_oil));
                 break;
@@ -1845,8 +1846,9 @@ public class DashboardFragment extends CarFragment {
                 setupClock(icon, "ic_battery", "", clock, false, getString(R.string.unit_volt), 0, 17, "float", "integer");
                 break;
             case "exlap-oilTemperature":
-                //case "torque-oiltemperature_0x5c":
-            case "elantra-oiltemperature_0x-22DFAA":
+            //case "torque-oiltemperature_0x5c":
+            //case "elantra-oiltemperature_0x-22DFAA":
+            case "torque-oiltemperature_0x22e001":
                 setupClock(icon, "ic_oil", "", clock, true, "°", 0, 200, "float", "integer");
                 break;
             case "exlap-coolantTemperature":
@@ -2292,7 +2294,8 @@ public class DashboardFragment extends CarFragment {
                         clock.setUnit(unitText);
                         break;
                     case "torque-enginecoolanttemp_0x-22DFAA":
-                    case "elantra-oiltemperature_0x-22DFAA":
+                    //case "elantra-oiltemperature_0x-22DFAA":
+                    case "torque-oiltemperature_0x22e001":
                         unitText = "°C";
                         clock.setUnit(unitText);
                         break;
