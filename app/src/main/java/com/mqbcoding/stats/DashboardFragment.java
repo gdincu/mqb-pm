@@ -2692,7 +2692,8 @@ public class DashboardFragment extends CarFragment {
 
                     try {
                         if (torqueService != null) {
-                            torqueData = torqueService.getValueForPids(queryPids)[2];
+                            float[] tempArray = torqueService.getValueForPids(queryPids);
+                            torqueData = Float.valueOf(tempArray.length);
                             String unitText = torqueService.getUnitForPid(queryPids[2]);
                             value.setText(String.format(Locale.US, FORMAT_DECIMALS_WITH_UNIT, torqueData, unitText));
                         }

@@ -1,4 +1,5 @@
 <resources>
+
   <item type="id" name="icon"/>
   <item type="id" name="title"/>
   <item type="id" name="text"/>

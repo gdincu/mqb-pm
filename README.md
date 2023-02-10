@@ -2,6 +2,15 @@
 
 [![ci][1]][2]
 
+This is an adapted version of the below app that displays some custom PIDs for Hyundai Elantra CN7 (it might also work with other Hyundai/ Kia/ Genesis vehicles that use similar custom PIDs).
+
+Besides Torque Pro (play.google.com/store/apps/details?id=org.prowl.torque), this requires a separate app that provides the list of custom PIDs - AwesomeConnect (play.google.com/store/apps/details?id=com.awesomeit.vehicleplus)
+It also needs a custom PID for oil temperature to be imported into Torque - see apk/OilTempPID.csv
+
+A basic how-to guide is available at apk/HowTo.txt
+
+<hr>
+
 This was a performance monitor, based on Martoreto's aa-stats.
 It was made specifically for use with the Volkswagen/Skoda/Seat/Audi MIB2 infotainment units, but it might also work on others, as long as they have Android Auto support.
 

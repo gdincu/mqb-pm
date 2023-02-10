@@ -1,2 +1,2 @@
 Name," ""ShortName"""," ""ModeAndPID"""," ""Equation"""," ""Min Value"""," ""Max Value"""," ""Units"""," ""Header"""," ""startDiagnostic"""," ""stopDiagnostic"""," ""scale""",minimumRefreshDelayMillis
-OilTemp,OilTemp,0x22e001,LOOKUP((AI-32)*5/9::-50~63=(((AI-32)*5/9)-((66-((AI-32)*5/9))/3))-1.5:64~250=(((AI-32)*5/9)+(((AI-32)*5/9)-66)/3))-0.5,-50,250,C,,,,1,0
+OilTemp,OilTemp,0x22e001,-1*(((AI-32)*(AI-32)*(AI-32)*0.563440636533094/10000000000)-((AI-32)*(AI-32)*1.36331537033077/100000000)+((AI-32)*0.750194444444444)-23.9937),-500,500,C,,,,1,0
