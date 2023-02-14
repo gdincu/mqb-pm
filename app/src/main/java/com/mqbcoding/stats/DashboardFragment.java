@@ -1449,16 +1449,12 @@ public class DashboardFragment extends CarFragment {
                 label.setBackground(getContext().getDrawable(R.drawable.ic_heading));
                 break;
             case "coolantTemperature":
-            //case "torque-enginecoolanttemp_0x05":
-            case "torque-enginecoolanttemp_0x-22DFAA":
-
+            case "torque-enginecoolanttemp_0x0167":
                 label.setText("");
                 value.setText(FORMAT_TEMPERATURE0);
                 label.setBackground(getContext().getDrawable(R.drawable.ic_water));
                 break;
             case "oilTemperature":
-            //case "torque-oiltemperature_0x5c":
-            //case "elantra-oiltemperature_0x-22DFAA":
             case "torque-oiltemperature_0x22e001":
                 value.setText(FORMAT_TEMPERATURE0);
                 label.setBackground(getContext().getDrawable(R.drawable.ic_oil));
@@ -1846,14 +1842,11 @@ public class DashboardFragment extends CarFragment {
                 setupClock(icon, "ic_battery", "", clock, false, getString(R.string.unit_volt), 0, 17, "float", "integer");
                 break;
             case "exlap-oilTemperature":
-            //case "torque-oiltemperature_0x5c":
-            //case "elantra-oiltemperature_0x-22DFAA":
             case "torque-oiltemperature_0x22e001":
                 setupClock(icon, "ic_oil", "", clock, true, "°", 0, 200, "float", "integer");
                 break;
             case "exlap-coolantTemperature":
-                //case "torque-enginecoolanttemp_0x05":
-            case "torque-enginecoolanttemp_0x-22DFAA":
+            case "torque-enginecoolanttemp_0x0167":
                 setupClock(icon, "ic_water", "", clock, true, "°", 0, 200, "float", "integer");
                 break;
             case "exlap-outsideTemperature":
@@ -2276,10 +2269,8 @@ public class DashboardFragment extends CarFragment {
                     case "torque-intake_air_temperature_0x0f":
                     case "torque-transmissiontemp_0x0105":
                     case "torque-transmissiontemp_0xfe1805":
-                    //case "torque-oiltemperature_0x5c":
                     case "torque-catalysttemperature_0x3c":
                     case "torque-chargeaircoolertemperature_0x77":
-                        //case "torque-enginecoolanttemp_0x05":
                     case "torque-exhaustgastempbank1sensor1_0x78":
                     case "torque-exhaustgastempbank1sensor2_0xff1282":
                     case "torque-exhaustgastempbank1sensor3_0xff1283":
@@ -2293,8 +2284,7 @@ public class DashboardFragment extends CarFragment {
                         }
                         clock.setUnit(unitText);
                         break;
-                    case "torque-enginecoolanttemp_0x-22DFAA":
-                    //case "elantra-oiltemperature_0x-22DFAA":
+                    case "torque-enginecoolanttemp_0x0167":
                     case "torque-oiltemperature_0x22e001":
                         unitText = "°C";
                         clock.setUnit(unitText);
@@ -2653,8 +2643,7 @@ public class DashboardFragment extends CarFragment {
                 case "torque-catalysttemperature_0x3c":
                 case "torque-chargeaircoolertemperature_0x77":
                 case "torque-commandedequivalenceratiolambda_0x44":
-                    //case "torque-enginecoolanttemp_0x05":
-                case "torque-enginecoolanttemp_0x-22DFAA":
+                case "torque-enginecoolanttemp_0x0167":
                 case "torque-engineloadabsolute_0x43":
                 case "torque-fuellevel_0x-22AFAB":
                 case "torque-intakemanifoldpressure_0x0b":
@@ -2694,7 +2683,7 @@ public class DashboardFragment extends CarFragment {
                         if (torqueService != null) {
                             float[] tempArray = torqueService.getValueForPids(queryPids);
                             torqueData = Float.valueOf(tempArray.length);
-                            String unitText = torqueService.getUnitForPid(queryPids[2]);
+                            String unitText = torqueService.getUnitForPid(queryPids[0]);
                             value.setText(String.format(Locale.US, FORMAT_DECIMALS_WITH_UNIT, torqueData, unitText));
                         }
                     } catch (Exception e) {
