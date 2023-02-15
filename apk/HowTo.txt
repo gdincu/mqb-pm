@@ -1,9 +1,8 @@
 1) Install AAAD from github.com/shmykelsa/AAAD
 2) Install TorquePro from play.google.com/store/apps/details?id=org.prowl.torque
-3) Install AwesomeConnect from play.google.com/store/apps/details?id=com.awesomeit.vehicleplus
-4) Download the PerformaneMonitor app from AAAD and when asked whether to install it or not replace the pm0.apk file at .\internal\Android\data\sksa.aa.customapps\files\AAAD with the one uploaded here
-5) Continue the installation process
+3) Download the PerformaneMonitor app from AAAD and when asked whether to install it or not replace the pm0.apk file at .\internal\Android\data\sksa.aa.customapps\files\AAAD with the one uploaded here
+4) Continue the installation process
 
-Setup each app (ensure that the custom list of PIDs available from AwesomeConnect are imported into Torque AND also import the custom oil pid from the OilTempPID.csv file). 
+If the installation process worked correctly, PerformanceMonitor should be available in the "Customsie launcher" section of your AndroidAuto app.
 
-Before opening the PerformanceManager app via your OEM AA headunit, open the AwesomeConnect app and open Torque from it's menu (so that it has access to the custom list of PIDs).
+Setup TorquePro and import the custom oil pids from the OilTempPID.csv file (Settings - Manage extra PIDs/Sensors - Import CSV file).

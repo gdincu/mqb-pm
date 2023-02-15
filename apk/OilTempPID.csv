@@ -1,4 +1,4 @@
 Name," ""ShortName"""," ""ModeAndPID"""," ""Equation"""," ""Min Value"""," ""Max Value"""," ""Units"""," ""Header"""," ""startDiagnostic"""," ""stopDiagnostic"""," ""scale""",minimumRefreshDelayMillis
-OilTemp,OilTemp,0x22e001,#NAME?,-500,500,C,,,,1,0
+OilTemp,OilTemp,0x22e001,-1*(((AI-32)*(AI-32)*(AI-32)*0.563440636533094/10000000000)-((AI-32)*(AI-32)*1.36331537033077/100000000)+((AI-32)*0.750194444444444)-23.9937),-500,500,C,,,,1,0
 CoolantA,CoolantA,0x0167,B-40,-40,215,C,,,,1,0
 CoolantB,CoolantB,0x0167,C-40,-40,215,C,,,,1,0
