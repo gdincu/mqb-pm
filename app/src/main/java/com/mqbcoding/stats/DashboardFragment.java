@@ -1573,7 +1573,7 @@ public class DashboardFragment extends CarFragment {
                 label.setBackground(getContext().getDrawable(R.drawable.ic_tyre));
                 break;
             case "tankLevelPrimary":
-            case "torque-fuellevel_0x-22AFAB":
+            case "torque-fuellevel_0xff1203":
                 //label.setText("1");
                 label.setBackground(getContext().getDrawable(R.drawable.ic_fuel));
                 break;
@@ -1905,7 +1905,7 @@ public class DashboardFragment extends CarFragment {
                 setupClock(icon, "ic_fuelsecondary", "", clock, false, "l/100km", 0, 100, "float", "integer");
                 break;
             case "exlap-tankLevelPrimary":
-            case "torque-fuellevel_0x-22AFAB":
+            case "torque-fuellevel_0xff1203":
                 setupClock(icon, "ic_fuelprimary", "", clock, false, "l", 0, 47, "float", "integer");
                 break;
             case "exlap-tankLevelSecondary":
@@ -2254,7 +2254,7 @@ public class DashboardFragment extends CarFragment {
                     case "torque-commandedequivalenceratiolambda_0x44":
                     case "torque-o2sensor1equivalenceratio_0x34":
                     case "torque-engineloadabsolute_0x43":
-                    case "torque-fuellevel_0x-22AFAB":
+                    case "torque-fuellevel_0xff1203":
                     case "torque-fuelrailpressure_0x23":
                         clock.setUnit(unitText); // use the units Torque is providing
                         break;
@@ -2645,7 +2645,6 @@ public class DashboardFragment extends CarFragment {
                 case "torque-commandedequivalenceratiolambda_0x44":
                 case "torque-enginecoolanttemp_0x0167":
                 case "torque-engineloadabsolute_0x43":
-                case "torque-fuellevel_0x-22AFAB":
                 case "torque-intakemanifoldpressure_0x0b":
                 case "torque-o2sensor1equivalenceratio_0x34":
                 case "torque-obdadaptervoltage_0xff1238":
@@ -2656,7 +2655,6 @@ public class DashboardFragment extends CarFragment {
                 case "torque-transmissiontemp_0x0105":
                 case "torque-transmissiontemp_0xfe1805":
                 case "torque-voltagemodule_0x42":
-
 // TODO: this seems useless, becuase we check the torqueQuery earlier than this
                     queryElement = queryElement.substring(queryElement.lastIndexOf('_') + 1);
                     queryElement = queryElement.substring(2);
@@ -2673,18 +2671,25 @@ public class DashboardFragment extends CarFragment {
                         Log.e(TAG, "Error: " + e.getMessage());
                     }
                     break;
-                case "elantra-oiltemperature_0x-22DFAA":
+                case "torque-fuellevel_0xff1203":
                     queryElement = queryElement.substring(queryElement.lastIndexOf('_') + 1);
                     queryElement = queryElement.substring(2);
-                    long[] queryPids = new long[1];
-                    queryPids[0]= new BigInteger(queryElement, 16).longValue();
+                    queryPid = new BigInteger(queryElement, 16).longValue();
 
                     try {
                         if (torqueService != null) {
-                            float[] tempArray = torqueService.getValueForPids(queryPids);
-                            torqueData = Float.valueOf(tempArray.length);
-                            String unitText = torqueService.getUnitForPid(queryPids[0]);
-                            value.setText(String.format(Locale.US, FORMAT_DECIMALS_WITH_UNIT, torqueData, unitText));
+                            String unitText = torqueService.getUnitForPid(queryPid);
+                            float torqueData5 = torqueService.getValueForPid(queryPid, true);
+
+                            if(torqueData5 <= 2) {
+                                torqueData5 = 50.0f;
+                            } else if (torqueData5 > 1000) {
+                                torqueData5 = 0.0f;
+                            } else {
+                                torqueData5 = 100/torqueData5;
+                            }
+
+                            value.setText(String.format(Locale.US, FORMAT_DECIMALS, torqueData5, unitText));
                         }
                     } catch (Exception e) {
                         Log.e(TAG, "Error: " + e.getMessage());
