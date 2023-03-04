@@ -109,7 +109,7 @@
         <item>@string/element_torque_fueltrimlongterm1</item>
         <item>@string/element_torque_fueltrimshortterm2</item>
         <item>@string/element_torque_fueltrimlongterm2</item>
-        <item>@string/element_torque_accelerometer_total</item>
+        <item>@string/element_torque_currentgear</item>
         <item>@string/element_torque_phonebatterylevel</item>
         <item>@string/element_torque_phonebarometer</item>
         <item>@string/element_torque_obdadaptervoltage</item>
@@ -197,7 +197,7 @@
         <item>torque-fueltrimlongterm1_0x07</item>
         <item>torque-fueltrimshortterm2_0x08</item>
         <item>torque-fueltrimlongterm2_0x09</item>
-        <item>torque-accelerometer_total_0xff1223</item>
+        <item>torque-currentgear_0x010c</item>
         <item>torque-phonebatterylevel_0xff129a</item>
         <item>torque-phonebarometer_0xff1270</item>
         <item>torque-obdadaptervoltage_0xff1238</item>
@@ -374,7 +374,7 @@
         <item>@string/element_torque_fueltrimlongterm1</item>
         <item>@string/element_torque_fueltrimshortterm2</item>
         <item>@string/element_torque_fueltrimlongterm2</item>
-        <item>@string/element_torque_accelerometer_total</item>
+        <item>@string/element_torque_currentgear</item>
 
         <item>@string/element_torque_fuelrailpressure</item>
         <item>@string/element_torque_exhaustgastempbank1sensor1</item>
@@ -477,7 +477,7 @@
         <item>torque-fueltrimlongterm1_0x07</item>
         <item>torque-fueltrimshortterm2_0x08</item>
         <item>torque-fueltrimlongterm2_0x09</item>
-        <item>torque-accelerometer_total_0xff1223</item>
+        <item>torque-currentgear_0x010c</item>
 
         <item>torque-fuelrailpressure_0x23</item>
         <item>torque-exhaustgastempbank1sensor1_0x78</item>

@@ -1491,9 +1491,9 @@ public class DashboardFragment extends CarFragment {
             case "currentGear":
                 label.setBackground(getContext().getDrawable(R.drawable.ic_gearbox));
                 break;
-            case "torque-accelerometer_total_0xff1223":
+            case "torque-currentgear_0x010c":
             case "lateralAcceleration":
-                label.setBackground(getContext().getDrawable(R.drawable.ic_lateral));
+                label.setBackground(getContext().getDrawable(R.drawable.ic_gearbox));
                 break;
             case "longitudinalAcceleration":
                 label.setBackground(getContext().getDrawable(R.drawable.ic_longitudinal));
@@ -1945,8 +1945,8 @@ public class DashboardFragment extends CarFragment {
             case "torque-fueltrimlongterm2_0x09":
                 setupClock(icon, "ic_none", getString(R.string.label_ftlt2), clock, false, torqueUnit, -20, 20, "float", "integer");
                 break;
-            case "torque-accelerometer_total_0xff1223":
-                setupClock(icon, "ic_none", "", clock, false, "G", -3, 3, "float", "float");
+            case "torque-currentgear_0x010c":
+                setupClock(icon, "ic_none", "", clock, false, "G", 0, 10, "integer", "integer");
                 break;
             case "torque-phonebatterylevel_0xff129a":
                 setupClock(icon, "ic_phone", "", clock, false, "%", 0, 100, "integer", "integer");
@@ -2237,7 +2237,7 @@ public class DashboardFragment extends CarFragment {
                     case "torque-fueltrimlongterm1_0x07":
                     case "torque-fueltrimshortterm2_0x08":
                     case "torque-fueltrimlongterm2_0x09":
-                    case "torque-accelerometer_total_0xff1223":
+                    case "torque-currentgear_0x010c":
                     case "torque-phonebatterylevel_0xff129a":
                     case "torque-phonebarometer_0xff1270":
                     case "torque-fuelflow_0xFF125D":
@@ -2632,7 +2632,7 @@ public class DashboardFragment extends CarFragment {
                 case "torque-fueltrimlongterm1_0x07":
                 case "torque-fueltrimshortterm2_0x08":
                 case "torque-fueltrimlongterm2_0x09":
-                case "torque-accelerometer_total_0xff1223":
+                case "torque-currentgear_0x010c":
                 case "torque-fuelrailpressure_0x23":
                 case "torque-exhaustgastempbank1sensor1_0x78":
                 case "torque-exhaustgastempbank1sensor2_0xff1282":

@@ -207,7 +207,7 @@
     <string name="element_torque_fueltrimshortterm1">Short term fuel trim (bank 1)</string>
     <string name="element_torque_fueltrimshortterm2">Short term fuel trim (bank 2)</string>
     <string name="element_torque_fueltrimlongterm2">Long term fuel trim (bank 2)</string>
-    <string name="element_torque_accelerometer_total">Accelerometer (Total)</string>
+    <string name="element_torque_currentgear">Current gear</string>
     <string name="element_torque_fueltrimlongterm1">Long term fuel trim (bank 1)</string>
 
     <string name="label_fuel">Fuel</string>
@@ -241,7 +241,7 @@
     <string name="element_torque_engineloadabsolute">Engine load (Absolute)</string>
     <string name="element_torque_ambientairtemp">Ambient air temperature</string>
     <string name="element_torque_catalysttemperature">Catalyst temperature</string>
-    <string name="element_torque_fuellevel">Fuel level</string>
+    <string name="element_torque_fuellevel">Fuel consumption (L/100Km)</string>
     <string name="element_torque_o2sensor1equivalenceratio">O2 sensor 1 equivalence ratio</string>
     <string name="element_torque_fuelrailpressure">Fuel rail pressure</string>
     <string name="element_torque_exhaustgastempbank1sensor1">Exhaust Gas temperature bank 1 sensor 1</string>
