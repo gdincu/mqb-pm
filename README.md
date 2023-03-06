@@ -4,10 +4,14 @@
 
 This is an adapted version of the below app that displays some custom PIDs for Hyundai Elantra CN7 (it might also work with other Hyundai/ Kia/ Genesis vehicles that use similar custom PIDs).
 
-Besides Torque Pro (play.google.com/store/apps/details?id=org.prowl.torque), this requires a separate app that provides the list of custom PIDs - AwesomeConnect (play.google.com/store/apps/details?id=com.awesomeit.vehicleplus)
-It also needs a custom PID for oil temperature to be imported into Torque - see apk/OilTempPID.csv
+This works together with Torque Pro (play.google.com/store/apps/details?id=org.prowl.torque) and uses a list of custom PIDs (see apk/OilTempPID.csv) for:
+- Oil temperature
+- Engine coolant temperature
+- Current gear
 
 A basic how-to guide is available at apk/HowTo.txt
+
+<img src="https://github.com/gdincu/mqb-pm/raw/HyundaiElantraCN7/apk/Screenshot.jpeg">
 
 <hr>
 
