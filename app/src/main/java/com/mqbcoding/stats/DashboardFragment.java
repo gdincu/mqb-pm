@@ -1906,7 +1906,7 @@ public class DashboardFragment extends CarFragment {
                 break;
             case "exlap-tankLevelPrimary":
             case "torque-fuellevel_0xff1203":
-                setupClock(icon, "ic_fuelprimary", "", clock, false, "l", 0, 47, "float", "integer");
+                setupClock(icon, "ic_fuelprimary", "", clock, false, "l/100km", 0, 47, "float", "integer");
                 break;
             case "exlap-tankLevelSecondary":
                 setupClock(icon, "ic_fuelsecondary", "", clock, false, "%", 0, 100, "float", "integer");
@@ -1946,7 +1946,7 @@ public class DashboardFragment extends CarFragment {
                 setupClock(icon, "ic_none", getString(R.string.label_ftlt2), clock, false, torqueUnit, -20, 20, "float", "integer");
                 break;
             case "torque-currentgear_0x010c":
-                setupClock(icon, "ic_none", "", clock, false, "G", 0, 10, "integer", "integer");
+                setupClock(icon, "ic_gearbox", "", clock, false, "", 0, 10, "integer", "integer");
                 break;
             case "torque-phonebatterylevel_0xff129a":
                 setupClock(icon, "ic_phone", "", clock, false, "%", 0, 100, "integer", "integer");
@@ -2254,7 +2254,6 @@ public class DashboardFragment extends CarFragment {
                     case "torque-commandedequivalenceratiolambda_0x44":
                     case "torque-o2sensor1equivalenceratio_0x34":
                     case "torque-engineloadabsolute_0x43":
-                    case "torque-fuellevel_0xff1203":
                     case "torque-fuelrailpressure_0x23":
                         clock.setUnit(unitText); // use the units Torque is providing
                         break;
@@ -2265,6 +2264,9 @@ public class DashboardFragment extends CarFragment {
                         }
 
                         clock.setUnit(unitText);
+                        break;
+                    case "torque-fuellevel_0xff1203":
+                        unitText = "l/100Km";
                         break;
                     case "torque-intake_air_temperature_0x0f":
                     case "torque-transmissiontemp_0x0105":
@@ -2632,7 +2634,6 @@ public class DashboardFragment extends CarFragment {
                 case "torque-fueltrimlongterm1_0x07":
                 case "torque-fueltrimshortterm2_0x08":
                 case "torque-fueltrimlongterm2_0x09":
-                case "torque-currentgear_0x010c":
                 case "torque-fuelrailpressure_0x23":
                 case "torque-exhaustgastempbank1sensor1_0x78":
                 case "torque-exhaustgastempbank1sensor2_0xff1282":
@@ -2681,9 +2682,7 @@ public class DashboardFragment extends CarFragment {
                             String unitText = torqueService.getUnitForPid(queryPid);
                             float torqueData5 = torqueService.getValueForPid(queryPid, true);
 
-                            if(torqueData5 <= 2) {
-                                torqueData5 = 50.0f;
-                            } else if (torqueData5 > 1000) {
+                            if(torqueData5 < 2 || torqueData5 > 1000) {
                                 torqueData5 = 0.0f;
                             } else {
                                 torqueData5 = 100/torqueData5;
@@ -2721,6 +2720,7 @@ public class DashboardFragment extends CarFragment {
                     break;
                 case "torque-rpm_0x0c":
                 case "torque-speed_0x0d":
+                case "torque-currentgear_0x010c":
                     queryElement = queryElement.substring(queryElement.lastIndexOf('_') + 1);
                     queryElement = queryElement.substring(2);
                     queryPid = new BigInteger(queryElement, 16).longValue();
